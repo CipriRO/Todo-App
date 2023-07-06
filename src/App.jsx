@@ -7,6 +7,15 @@ import { useEffect } from "react";
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  function setCurrentTask(taskName) {
+    localStorage.setItem(taskName, "0");
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.value === taskName ? { ...task, key: "0" } : task
+      )
+    );
+  }
+
   function getAllDataFromLocalStorage() {
     const data = Object.keys(localStorage).map((key) => {
       return {
@@ -33,8 +42,8 @@ function App() {
       </div>
 
       <div className="flex flex-col gap-3 w-full items-center">
-        <TaskInput />
-        {tasks.length > 0 && <DisplayTasks tasks={tasks} />}
+        <TaskInput setTasks={setTasks} tasks={tasks} setCurrentTask={setCurrentTask} />
+        {tasks.length > 0 && <DisplayTasks tasks={tasks} setTasks={setTasks} setCurrentTask={setCurrentTask} />}
       </div>
     </div>
   );

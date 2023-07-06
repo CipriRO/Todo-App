@@ -1,4 +1,6 @@
-export default function DoneTasks({ tasks }) {
+export default function DoneTasks({ tasks, removeTask, setCurrentTask }) {
+  
+
   return (
     <>
       <div className="divider font-semibold">Done tasks</div>
@@ -16,6 +18,7 @@ export default function DoneTasks({ tasks }) {
               <button
                 type="button"
                 className="btn btn-sm btn-circle btn-info shadow"
+                onClick={() => setCurrentTask(task)}
               >
                 <svg
                   width="20"
@@ -36,6 +39,7 @@ export default function DoneTasks({ tasks }) {
               <button
                 type="button"
                 className="btn btn-sm btn-circle btn-error shadow"
+                onClick={() => removeTask(task)}
               >
                 <svg
                   width="20"

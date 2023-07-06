@@ -1,4 +1,13 @@
-export default function CurrentTasks({ tasks }) {
+export default function CurrentTasks({ tasks, setTasks, removeTask }) {
+  function setDoneTask(taskName) {
+    localStorage.setItem(taskName, "1");
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.value === taskName ? { ...task, key: "1" } : task
+      )
+    );
+  }
+
   return (
     <>
       <div className="divider font-semibold">Current tasks</div>
@@ -16,6 +25,7 @@ export default function CurrentTasks({ tasks }) {
               <button
                 type="button"
                 className="btn btn-sm btn-circle btn-success shadow"
+                onClick={() => setDoneTask(task)}
               >
                 <svg
                   width="20"
@@ -35,6 +45,7 @@ export default function CurrentTasks({ tasks }) {
               <button
                 type="button"
                 className="btn btn-sm btn-circle btn-error shadow"
+                onClick={() => removeTask(task)}
               >
                 <svg
                   width="20"
