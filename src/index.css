@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  max-height: calc(100vh - 4rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: hsla(0, 100%, 50%, 1);
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(28, 100%, 74%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 68% 10%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 17% 34%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 86% 49%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 11% 85%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 55% 69%, hsla(343, 100%, 76%, 1) 0px, transparent 50%);
+}
