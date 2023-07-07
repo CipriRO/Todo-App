@@ -1,8 +1,5 @@
 #root {
   max-width: 1280px;
-  max-height: calc(100vh - 4rem);
-  overflow-x: hidden;
-  overflow-y: auto;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -14,7 +11,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: hsla(0, 100%, 50%, 1);
+  background-color: hsla(0,87%,74%,1);
   background-image: radial-gradient(
       at 40% 20%,
       hsla(28, 100%, 74%, 1) 0px,
